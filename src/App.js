@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
+import MainPageContainer from './components/mainPageContainer/mainPageContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      
-      </header>
+      <MainPageContainer/>
     </div>
   );
 }
