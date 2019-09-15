@@ -31,7 +31,6 @@ class NavBar extends Component {
   
   render() {
     const { blocList } = this.props;
-    console.log(blocList);
     return (
       <Navbar bg="light" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
