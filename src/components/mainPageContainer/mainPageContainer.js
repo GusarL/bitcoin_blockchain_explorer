@@ -1,14 +1,16 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import PropTypes from 'prop-types';
 import Navbar from '../navBar/navBar';
 
 const MainPageContainer = ({match}) => {
   return (
     <div>
-      <Container>
-        <Navbar match={match}/>
-      </Container>
+      <Navbar match={match}/>
     </div>
   );};
+
+MainPageContainer.propTypes = {
+  match: PropTypes.object,
+};
 
 export default MainPageContainer;

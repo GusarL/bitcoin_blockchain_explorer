@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import {NavLink, Route, Switch, Router} from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import {NavLink, Route, BrowserRouter as Router} from 'react-router-dom';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -11,7 +11,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import { apiUrl } from '../../constants';
 import { GET_BLOCK_LIST } from '../../redux/actionTypes';
-import blocks from '../../redux/reducers/blocks';
 import LatestBlocks from '../latestBlocks/latestBlocks';
 import Blocks from '../blocks/blocks';
 
@@ -35,12 +34,11 @@ class NavBar extends Component {
   }
   
   render() {
-    const { blocList, match } = this.props;
-    const history = createBrowserHistory();
+    const { match } = this.props;
   
     return (
       <div>
-        <Router history={history}>
+        <Router>
           <Navbar bg="light" expand="lg">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -64,14 +62,13 @@ class NavBar extends Component {
           </div>
         </Router>
       </div>
-      
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    blocList: state.blocks.blocList,
-  };
+
+NavBar.propTypes = {
+  match: PropTypes.object,
+  // populateBlockList: PropTypes.function,
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -83,6 +80,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(
-  mapStateToProps,
   mapDispatchToProps
 )(NavBar);
