@@ -71,6 +71,12 @@ NavBar.propTypes = {
   // populateBlockList: PropTypes.function,
 };
 
+const mapStateToProps = (state) => {
+  return {
+    blockList: state.blocks.blockList,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     populateBlockList: (blockList) => {
@@ -80,5 +86,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(
+  mapStateToProps,
   mapDispatchToProps
 )(NavBar);
