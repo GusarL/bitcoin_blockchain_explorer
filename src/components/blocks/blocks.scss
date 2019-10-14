@@ -1,0 +1,28 @@
+.pagination {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.pagination-element {
+  margin: auto;
+}
+
+.pagination-link {
+  color: #343a40;
+  font-size: x-large;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.pagination-text {
+  color: black;
+  font-size: x-large;
+  font-weight: 600;
+  &::before {
+	content: 'Blocks mined on:'
+  }
+}
+
+.pagination-disabled {
+  color: #6c757d;
+}
