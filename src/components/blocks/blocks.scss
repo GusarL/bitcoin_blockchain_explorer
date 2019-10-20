@@ -19,7 +19,8 @@
   font-size: x-large;
   font-weight: 600;
   &::before {
-	content: 'Blocks mined on:'
+	content: 'Blocks mined on:';
+    margin-right: 3px;
   }
 }
 

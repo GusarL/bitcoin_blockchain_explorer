@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {GET_BLOCK_LIST} from '../../redux/actionTypes';
+import Moment from 'react-moment';
 
 class BlockInTable extends Component {
   render() {
@@ -11,7 +12,11 @@ class BlockInTable extends Component {
         <td>{ index + 1 }</td>
         <td>{ block.height }</td>
         <td>{ block.hash }</td>
-        <td>{ block.time }</td>
+        <td>
+          <Moment unix>
+            { block.time }
+          </Moment>
+        </td>
       </tr>
       
     );}
